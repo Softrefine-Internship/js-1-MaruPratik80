@@ -18,7 +18,18 @@ const diff = function (arr1, arr2) {
   for (let i = 0; i < arr2.length; i++) {
     if (!arr1.includes(arr2[i])) arr.push(arr2[i]);
   }
-  return arr.sort((a, b) => a - b);
+
+  // SORTING
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] > arr[j]) {
+        let t = arr[i];
+        arr[i] = arr[j];
+        arr[j] = t;
+      }
+    }
+  }
+  return arr;
 };
 
 const diffArr = diff(arr1, arr2);

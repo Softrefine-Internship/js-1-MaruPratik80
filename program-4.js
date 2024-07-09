@@ -12,13 +12,25 @@ const arr2 = [4, 2];
 
 const merge = function (arr1, arr2) {
   const arr = [];
+
   for (let i = 0; i < arr1.length; i++) {
     arr.push(arr1[i]);
   }
   for (let i = 0; i < arr2.length; i++) {
     arr.push(arr2[i]);
   }
-  return arr.sort();
+
+  // SORTING
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] > arr[j]) {
+        let t = arr[i];
+        arr[i] = arr[j];
+        arr[j] = t;
+      }
+    }
+  }
+  return arr;
 };
 
 const mergedArr = merge(arr1, arr2);

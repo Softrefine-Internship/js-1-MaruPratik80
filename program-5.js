@@ -11,3 +11,30 @@ Given an integer array flowerbed containing 0's and 1's, where 0 means empty and
 // Example 2:
 // Input: flowerbed = [1,0,0,0,1], n = 2
 // Output: false
+"use strict";
+
+const flowerbed1 = [1, 0, 0, 0, 1];
+const n1 = 1;
+
+const flowerbed2 = [1, 0, 0, 0, 1];
+const n2 = 2;
+
+const canPlanFlowers = function (flowerbed, n) {
+  for (let i = 0; i < flowerbed.length; i++) {
+    if (
+      flowerbed[i] === 0 &&
+      flowerbed[i - 1] === 0 &&
+      flowerbed[i + 1] === 0
+    ) {
+      flowerbed[i] = 1;
+      n--;
+      if (!n) {
+        return true;
+      }
+    }
+  }
+  return false;
+};
+
+console.log(canPlanFlowers(flowerbed1, n1));
+console.log(canPlanFlowers(flowerbed2, n2));
