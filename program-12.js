@@ -13,10 +13,10 @@ const arr2 = [100, 2, 1, 10];
 const diff = function (arr1, arr2) {
   const arr = [];
   for (let i = 0; i < arr1.length; i++) {
-    if (!arr2.includes(arr1[i])) arr.push(arr1[i]);
+    if (!arr2.includes(arr1[i]) && !arr.includes(arr1[i])) arr.push(arr1[i]);
   }
   for (let i = 0; i < arr2.length; i++) {
-    if (!arr1.includes(arr2[i])) arr.push(arr2[i]);
+    if (!arr1.includes(arr2[i]) && !arr.includes(arr2[i])) arr.push(arr2[i]);
   }
 
   // SORTING

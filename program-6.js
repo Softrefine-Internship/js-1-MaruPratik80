@@ -13,15 +13,14 @@ const arr2 = [3, 4, 5, 7];
 const merge = function (arr1, arr2) {
   const arr = [];
   for (let i = 0; i < arr1.length; i++) {
-    arr.push(arr1[i]);
+    if (!arr.includes(arr1[i])) arr.push(arr1[i]);
   }
   for (let i = 0; i < arr2.length; i++) {
-    if (!arr.includes(arr2[i])) {
-      arr.push(arr2[i]);
-    }
+    if (!arr.includes(arr2[i])) arr.push(arr2[i]);
   }
   return arr;
 };
 
 const mergedArr = merge(arr1, arr2);
-console.log(arr1, arr2, mergedArr);
+console.log(arr1, arr2);
+console.log(mergedArr);

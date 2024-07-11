@@ -14,12 +14,10 @@ const arr2 = [100, 2, 1, 10];
 const union = function (arr1, arr2) {
   const arr = [];
   for (let i = 0; i < arr1.length; i++) {
-    arr.push(arr1[i]);
+    if (!arr.includes(arr1[i])) arr.push(arr1[i]);
   }
   for (let i = 0; i < arr2.length; i++) {
-    if (!arr.includes(arr2[i])) {
-      arr.push(arr2[i]);
-    }
+    if (!arr.includes(arr2[i])) arr.push(arr2[i]);
   }
 
   // SORTING

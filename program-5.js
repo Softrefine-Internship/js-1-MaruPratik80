@@ -19,12 +19,15 @@ const n1 = 1;
 const flowerbed2 = [1, 0, 0, 0, 1];
 const n2 = 2;
 
+const flowerbed3 = [0, 0, 1, 0, 0, 0, 1, 0, 0];
+const n3 = 3;
+
 const canPlanFlowers = function (flowerbed, n) {
   for (let i = 0; i < flowerbed.length; i++) {
     if (
       flowerbed[i] === 0 &&
-      flowerbed[i - 1] === 0 &&
-      flowerbed[i + 1] === 0
+      (flowerbed[i - 1] === 0 || i === 0) &&
+      (flowerbed[i + 1] === 0 || i === flowerbed.length - 1)
     ) {
       flowerbed[i] = 1;
       n--;
@@ -38,3 +41,4 @@ const canPlanFlowers = function (flowerbed, n) {
 
 console.log(canPlanFlowers(flowerbed1, n1));
 console.log(canPlanFlowers(flowerbed2, n2));
+console.log(canPlanFlowers(flowerbed3, n3));
